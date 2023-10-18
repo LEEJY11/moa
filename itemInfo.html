@@ -1,0 +1,755 @@
+
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>아이템정보 | 모아 서버</title>
+<link rel="stylesheet" href="./theme/l-word/css/default.css">
+<link rel="stylesheet" href="./js/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="./theme/l-word/skin/board/basic_div/style.css">
+
+<style>
+
+nav {
+background-color: rgba( 000, 000, 000, 0.5 );
+    }
+
+
+
+.Dflex {
+		display:flex;
+		justify-content: center;
+	}
+
+.container {
+magin-top:250px;
+}
+
+.download_btn {
+    background-color: #297fe2;
+    height: 57px;
+    width: 190px;
+    text-align: center;
+    line-height: 57px;
+    position: absolute;
+    right: 0;
+}
+
+.download_btn:hover {
+    background-color: #174c89;
+    transition: all;
+    transition-duration: 0.5s, 1s, 1s, 1s;
+
+
+}
+
+.nav-link {
+ color: white;   
+}
+
+li a {
+color:#000;
+}
+
+
+.table-fill {
+display:inline-block;
+}
+
+.main-title {
+    position: relative;
+    text-align: center;
+    height: 52px;
+    padding: 5px 0 17px 0;
+}
+
+.main-title::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #eee;
+    z-index: 1;
+}
+
+
+</style>
+
+
+
+
+
+<!-- google fonts -->
+<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700,800|Noto+Sans+KR:100,300,400,500,700,900|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i|Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
+
+<!-------------------------- 구글아이콘 -------------------------->
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+<!-- Bootstrap core CSS -->
+<link href="./theme/l-word/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<!-- fontawesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<!-- owl Carousel -->
+<link rel="stylesheet" href="./theme/l-word/assets/owlcarousel/css/owl.carousel.min.css">
+<link rel="stylesheet" href="./theme/l-word/assets/owlcarousel/css/owl.theme.default.min.css">
+
+<!-- countdown -->
+<link href="./theme/l-word/assets/countdown/css/demo.css" rel="stylesheet">
+<!-- bootstrap-social icon -->
+<link href="./theme/l-word/assets/bootstrap-social/bootstrap-social.css" rel="stylesheet">
+<link href="./theme/l-word/css/animate.css" rel="stylesheet">
+<link href="./theme/l-word/css/bootstrap-dropdownhover.css" rel="stylesheet">
+<!-- Custom & ety -->
+<link href="./theme/l-word/css/modern-business.css" rel="stylesheet">
+<link href="./theme/l-word/css/ety.css" rel="stylesheet">
+
+
+<script src="./js/jquery-1.12.4.min.js"></script>
+<script src="./js/jquery-migrate-1.4.1.min.js"></script>
+<script src="./js/jquery.menu.js"></script>
+<script src="./js/common.js"></script>
+<script src="./js/wrest.js"></script>
+<script src="./js/placeholders.min.js"></script>
+</head>
+<body>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-------------------------- 네비게이션 -------------------------->
+<!-- <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        document
+            .querySelector(".mobile-menu")
+            .addEventListener("click", function (e) {
+                if (document.querySelector('.menuwrap').classList.contains('on')) {
+                    //메뉴닫힘
+                    document
+                        .querySelector('.menuwrap')
+                        .classList
+                        .remove('on');
+                    document
+                        .querySelector('.mobile-menu i')
+                        .classList
+                        .remove('')
+                    document
+                        .querySelector('.mobile-menu i')
+                        .classList
+                        .add('fa-bars');
+
+                } else {
+                    //메뉴펼침
+                    document
+                        .querySelector('.menuwrap')
+                        .classList
+                        .add('on');
+                    document
+                        .querySelector('.mobile-menu i')
+                        .classList
+                        .remove('fa-bars');
+                    document
+                        .querySelector('.mobile-menu i')
+                        .classList
+                        .add('fa-times');
+
+
+                    //페이지 스크롤 락 레이어 클릭 메뉴 닫기
+                    document
+                        .querySelector('#dimmed')
+                        .addEventListener('click', function (e) {
+                            document
+                                .querySelector(".mobile-menu")
+                                .click();
+                        });
+
+                }
+            });
+    });
+
+</script> -->
+
+<!-------------------------- 네비게이션 -------------------------->
+<div
+    class="container-fluid top-line fixed-header"
+    style="background-color: rgba(000, 000, 000, 0.5);">
+    <div class="">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="tnb_index_left">
+                    <!-------------------------- 왼쪽 히든메뉴 -------------------------->
+
+                    <!-- <button type="button" class="mobile-menu">
+                        <span>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                        </span>
+                    </button> -->
+
+                    <div class="menuwrap">
+                        <div class="m_logo">
+                            <a href="./index.html"><img src="https://i.postimg.cc/MGQyCWdL/image.png" alt="logo"></a>
+                        </div>
+                        <nav id="menu">
+                            <!-- "메뉴목록 표시" -->
+                            <ul class="category_list">
+                                <li>
+                                    <a href="#" class="category_list_li">메뉴</a>
+                                    <ol>
+                                        <li>
+                                            <a href="./serverInfo.html">서버정보</a>
+                                        </li>
+                                        <li>
+                                            <a href="./itemInfo.html">아이템 정보</a>
+                                        </li>
+                                        <li>
+                                            <a href="./hgInfo.html">사냥터 정보</a>
+                                        </li>
+                                        <li>
+                                            <a href="./bossInfo.html">보스 정보</a>
+                                        </li>
+                                        <li>
+                                            <a href="./prEvent.html">홍보 이벤트</a>
+                                        </li>
+
+                                    </ol>
+                                </li>
+                            </ul>
+                        </nav>
+						
+                        <!-------------------------- 왼쪽 히든메뉴 끝 -------------------------->
+
+                    </div>
+                    <div class="logo">
+                        <a href="./index.html"><img src="https://i.postimg.cc/MGQyCWdL/image.png" alt="logo"></a>
+                    </div>
+                </div>
+                <div id="tnb_index" style="background-color: rgba(000, 000, 000, 0.0); height: 57px;">
+                    <ul style="background-color: rgba(000, 000, 000, 0.0); float:right; margin-top:14px; width:500px;">
+                        <li>
+                            <a href="https://t.me/moasv" target="_blank">
+                                <i class="fa fa-comments" aria-hidden="true"></i>
+                            <span>텔레그램</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /col -->
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</div>
+<style>
+.collapse.in {
+-webkit-transition-delay: 4s;
+transition-delay: 5s;
+visibility: visible;
+}
+</style>
+<nav
+    class="navbar  navbar-expand-lg navbar-white bg-white fixed-top"
+    style="margin-top:29px; height: 58px; color: white;">
+    <div class="">
+        <button
+            class="navbar-toggler navbar-dark navbar-toggler-right"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarResponsive"
+            aria-controls="navbarResponsive"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+            class="collapse navbar-collapse"
+            id="navbarResponsive"
+            data-hover="dropdown"
+            data-animations="fadeIn fadeIn fadeInUp fadeInRight">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link ko_14 f15" href="./serverInfo.html" target="_self">서버정보</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link ko_14 f15" href="./itemInfo.html" target="_self">아이템정보</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link ko_14 f15" href="./hgInfo.html" target="_self">사냥터정보</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link ko_14 f15" href="./bossInfo.html" target="_self">보스정보</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link ko_14 f15" href="./prEvent.html" target="_self">홍보 이벤트</a>
+                </li>                    
+            </ul>
+            <div class="download_btn" style="">
+                <a href="./download.html" style="color:white;font-size: 20px; font-weight:bold;">다운로드</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    
+
+
+<style>
+/* mobile */
+@media (min-width: 1px) and (max-width: 1089px) {
+	.ety-main{margin-bottom:63px;}
+}
+
+/* desktop */
+@media (min-width: 1090px) {
+	.ety-main{margin-bottom:130px;}
+}
+</style>
+
+
+
+<!-------------------------- 게시판 상단 배경 수정하는 곳 -------------------------->
+
+<!-------------------------- 상단배경 수정 -------------------------->
+<style>
+/* mobile */
+@media (min-width: 1px) and (max-width: 1089px) {
+		.about-bg{background-image:url('');width:100%;-webkit-background-size:100% auto;-moz-background-size:100% auto;-o-background-size:100% auto;background-position:center; background-size: cover; background-repeat:no-repeat;color:#fff;height:100%;padding-top: 70px;}.ml-auto,.mx-auto{padding-top:10px;padding-bottom:10px}.lead{font-size:12px;font-weight:300}.display-4{ font-size:1.5rem;font-weight:300;}
+
+}
+/* desktop */
+@media (min-width: 1090px) {
+	.about-bg{background-image:url('https://i.ibb.co/9TGWzWb/bg1.png');background-position:center center;background-repeat:no-repeat;color:#fff;height:198px;}.lead{font-size:1.25rem;font-weight:300}.display-4{font-size:2.5rem;font-weight:300;line-height:1.2}
+}
+</style>
+
+
+<div class="position-relative overflow-hidden p-md-5 text-center bg-dark bg-sub-1 ety-mt-main about-bg">
+
+  <div class="col-md-5 p-lg-5 mx-auto my-5">
+	<h1 class="display-4 font-weight-normal"></h1>
+	<p class="lead font-weight-normal ko1">
+			</p>
+  </div>
+  <div class="product-device shadow-sm d-none d-md-block"></div>
+  <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+</div>
+<!-------------------------- ./상단배경 수정 -------------------------->
+<!-------------------------- ./게시판 상단 배경 수정하는 곳 --------------------------><script src="./js/viewimageresize.js"></script>
+		<style>
+		#bo_v_title .bo_v_tit {
+			display: block;
+			font-size: 18px;
+			margin: 5px 0 0;
+			word-break: break-all;
+		}
+		h2 {
+			font-size: 2.6em;
+			font-weight: 700;
+			margin: 0 0 5px 0;
+		}
+		/* 코멘트 */
+		.cmt_btn {
+			font-size: 14px;
+			margin: 30px 0 0px;
+			padding: 0 0 10px;
+		}
+
+
+		/* 페이지 selec 박스 */
+		/* mobile */
+		@media (min-width: 1px) and (max-width: 1089px) {
+			.mb-5, .my-5 {
+				margin-bottom: 0rem!important;
+			}
+			.select-menu{width:190px; height:58px; padding:17px 70px 17px 5px; border-top:none; border-bottom:1px solid #fff; border-left: 1px solid #e1e1e1;border-right: 1px solid #f2f2f2;}
+			.home{display:inline; width:140px; padding:17px 45px 17px 15px; border-left:1px solid #e1e1e1;}
+			.menu{display:inline;}
+		}
+		/* desktop */
+		@media (min-width: 1090px) {
+			.select-menu{width:190px; height:58px; padding:17px 70px 17px 5px; border-top:none; border-bottom:1px solid #fff; border-left: 1px solid #e1e1e1;border-right: 1px solid #f2f2f2;}
+			.home{display:inline; width:140px; padding:17px 45px 17px 15px; border-left:1px solid #e1e1e1;}
+			.menu{display:inline;}
+		}
+	</style>
+
+	<div class="divide80 mobile-none"></div>
+        <div class="container margin-top-40">
+            <div class="row" style="overflow: hidden;">
+                <div class="col-sm-12">
+
+					<!-- 게시물 읽기 시작 { -->
+					<article id="bo_v" style="width:100%">
+						<header>
+							<h2 class="ks4 f20">
+								 
+								아이템정보			
+							</h2>
+						</header>
+
+						<section id="bo_v_info">
+							<h2>페이지 정보</h2>
+							<span class="sound_only">작성자</span> <strong><span class="sv_member">최고관리자</span></strong>
+							<span class="sound_only">댓글</span><strong><a href="#bo_vc"> <i class="fa fa-commenting-o" aria-hidden="true"></i> 0건</a></strong>
+							<span class="sound_only">조회</span><strong><i class="fa fa-eye" aria-hidden="true"></i> 1,358회</strong>
+							<strong class="if_date"><span class="sound_only">작성일</span><i class="fa fa-clock-o" aria-hidden="true"></i> 23-09-21 01:00</strong>
+
+						</section>
+
+						<section id="bo_v_atc">
+							<h2 id="bo_v_atc_title">본문</h2>
+
+							<div id="bo_v_img">
+<!-- <a href="https://bing3838.com/bbs/view_image.php?bo_table=SV&amp;fn=0c388ea6cb3ac9e82d7b99b6beccfbcc_mJHuIb1Q_f3c5aa2a88bac927a01a0932c8332a321f8014f5.png" target="_blank" class="view_image"><img src="./images/board_top_server_info.jpg" alt=""  width="1110" height="150" ></a> -->
+<img src="./images/board_top_item_info.jpg" alt=""  width="1110" height="150" >
+</div>
+
+							<!-- 본문 내용 시작 { -->
+							<div id="bo_v_con">
+                                <h2 class="info-title">제작 및 합성 시스템</h2>
+                                <div class="info-text">
+                                    <div class="info-sub-title">
+                                        <h3>인형 합성 시스템</h3>
+                                        <p>인형이란 소환 시 일정 시간 동안 플레이어 케릭터를 따라다니며 다양한 효과를 주는 일종의 보조 케릭터 이다.</p>
+                                    </div>
+                                    <div class="info-paragraph">
+                                        <h4>특징</h4>
+                                        <p>1. 소환한 마법 인형에 따라 효과가 달라진다.</p>
+                                        <p>2. 1개만 소환할 수 있으며 다른 마법 인형을 소환하게 되면 앞서 소환 했었던 인형은 자동으로 소환 해제된다.</p>
+                                        <p>3. 인벤토리 내의 마법 인형을 더블 클릭하면 소환된다.</p>
+                                    </div>
+                                    <div class="info-paragraph">
+                                        <h4>인형 합성 시스템 설명</h4>
+                                        <p>각각 마법 인형 별로 등급이 설정되어 있으며, 동일 등급의 마법 인형을 합성하여 일정 확률로 상위 등급의 마법 인형을 얻을 수 있다.</p>
+                                        <p>⭐대성공⭐</p>
+                                        <p>- 인형 합성 시 일정 확률로 합성 재료로 쓰이는 인형의 등급보다 2단계 높은 인형을 획득 가능하다.</p>
+                                        <p>- 예를 들어 3단계 인형을 재료로 합성을 하였는데 대성공이 발동된다면 5단계 인혀을 얻을 수 있는 것이다.</p>
+                                        <p>⭐대성공 효과는 1단, 2단, 3단 인형을 재료로 합성 진행시에 발동된다.</p>
+                                    </div>
+                                </div>
+                                <div class="info-text">
+                                    <div class="info-sub-title">
+                                        <h3>마안 합성 시스템</h3>
+                                        <p>마안 이란 마법 인형의 역활과 비슷한 버프형 아이템이다.</p>
+                                        <p>마안 은 소환되거나 그런 것이 없으면 인벤에 소지 한채로 더블클릭 시 버프가 적용이 되는 것이다. 재 사용시 딜레이 존재한다.</p>
+                                    </div>
+                                    <div class="info-paragraph">
+                                        <h4>⭐탄생의 마안 ( 확률 30% )</h4>
+                                        <p>=  화룡의 마안 + 지룡의 마안 + 풍룡의 마안 + 수룡의 마안</p>
+                                    </div>
+                                    <div class="info-paragraph">
+                                        <h4>⭐형상의 마안 ( 확률 5% )</h4>
+                                        <p>= 탄생의 마안 + 천만 아데나</p>
+                                    </div>
+                                    <div class="info-paragraph">
+                                        <h4>⭐생명의 마안 ( 확률 1% )</h4>
+                                        <p>=형상의 마안 + 2천만 아데나</p>
+                                    </div>
+                                </div>
+                                <div class="info-text">
+                                    <div class="info-sub-title">
+                                        <h3>⭐⭐ 2차 무기 제작 ( 나발급 ) ⭐⭐</h3>
+                                    </div>
+                                    <div class="info-paragraph">
+                                        <h4>⭐나이트발드의 양손검⭐</h4>
+                                        <p>= 9대검 2자루 + 화룡의마안 3개 + 고급 보석 종류별로 각 500개 + 아데나 1억 + 신비한 날개깃털 5만개</p>
+                                    </div>
+                                    <div class="info-paragraph">
+                                        <h4>⭐악몽의 장궁⭐</h4>
+                                        <p>= 9장궁 2자루 + 풍룡의마안 3개 + 고급보석 종류별 각 500개 + 아데나 1억 + 신비한 날개깃털 5만개</p>
+                                    </div>
+                                    <div class="info-paragraph">
+                                        <h4>⭐데스나이트 불검⭐</h4>
+                                        <p>= 9황금지팡이 2자루 + 지룡의마안3개 + 고급 보석 종류별로 각 500개 + 아데나 1억 + 신비한 날개깃털 5만개</p>
+                                    </div>
+                                    <div class="info-paragraph">
+                                        <h4>⭐제로스의 지팡이⭐</h4>
+                                        <p>= 9마나지팡이 또는 9힘의지팡이 + 수룡의마안3개 + 고급 보석 종류별로 각 500개 + 아데나 1억 + 신비한 날개깃털 5만개</p>
+                                    </div>
+                                    <div class="info-paragraph">
+                                        <h4>⭐커츠의 검⭐</h4>
+                                        <p>= 9레이피어 + 화룡의마안2개 + 지룡의마안1개 + 고급 보석 종류별로 각 500개 + 아데다 1억 + 신비한 날개깃털 5만개</p>
+                                    </div>
+                                </div>
+                                <div class="info-text">
+                                    <div class="info-sub-title">
+                                        <h3>⭐⭐ 3차 무기 제작 ( 집행급 ) ⭐⭐</h3>
+                                    </div>
+                                    <div class="info-paragraph">
+                                        <h4>⭐진명황의 집행검⭐</h4>
+                                        <p>= 11 나이트발드의 양손검(1개) + 역사서 1장~8장(각1개씩) + 각 최고급 보석(1000개씩) + 10억아데나 + 신비한 날개깃털 (10만개)</p>
+                                    </div>
+                                    <div class="info-paragraph">
+                                        <h4>⭐가이아의 격노⭐</h4>
+                                        <p>= 11 악몽의 장궁(1개) + 역사서 1장~8장(각1개씩) + 각 최고급 보석(1000개씩) + 10억아데나 + 신비한 날개깃털 (10만개)</p>
+                                    </div>
+                                    <div class="info-paragraph">
+                                        <h4>⭐수정결정체 지팡이⭐</h4>
+                                        <p>= 11 제로스의 지팡이(1개)  + 역사서 1장~8장(각1개씩) + 각 최고급 보석(1000개씩) + 10억아데나 + 신비한 날개깃털 (10만개)</p>
+                                    </div>
+                                    <div class="info-paragraph">
+                                        <h4>⭐포르세 검⭐</h4>
+                                        <p>= 11 데스나이트 불검(1개) + 역사서 1장~8장(각1개씩) + 각 최고급 보석(1000개씩) + 10억아데나 + 신비한 날개깃털 (10만개)</p>
+                                    </div>
+                                    <div class="info-paragraph">
+                                        <h4>⭐바람칼날의 단검⭐</h4>
+                                        <p>= 11 오리하루콘 단검(1개) + 역사서 1장~8장(각1개씩) + 각 최고급 보석(1000개씩) + 10억아데나 + 신비한 날개깃털 (10만개)</p>
+                                    </div>
+                                </div>
+                            </div>
+														<!-- } 본문 내용 끝 -->
+
+							
+
+							<!--  추천 비추천 시작 { -->
+														<!-- }  추천 비추천 끝 -->
+						</section>
+
+						<div id="bo_v_share">
+							
+													</div>
+
+						
+						
+						
+						<!-- 게시물 상단 버튼 시작 { -->
+						<!-- <div id="bo_v_top">
+							
+							<ul class="bo_v_left">
+																																															</ul>
+
+							<ul class="bo_v_com">
+							   <li><a href="#" class="btn_b01 btn"><i class="fa fa-list" aria-hidden="true"></i> 목록</a></li>
+																							</ul>
+
+																				</div> -->
+						<!-- } 게시물 상단 버튼 끝 -->
+
+						
+<script>
+// 글자수 제한
+var char_min = parseInt(0); // 최소
+var char_max = parseInt(0); // 최대
+</script>
+<!-- <button type="button" class="cmt_btn"><i class="fa fa-commenting-o" aria-hidden="true"></i> 댓글목록</button> -->
+<!-- 댓글 시작 { -->
+<!-- <section id="bo_vc">
+    <h2>댓글목록</h2>
+        <p id="bo_vc_empty">등록된 댓글이 없습니다.</p>
+</section> -->
+<!-- } 댓글 끝 -->
+
+<!-- } 댓글 쓰기 끝 --><script src="https://bing3838.com/js/md5.js"></script>
+
+
+					</article>
+					<!-- } 게시판 읽기 끝 -->
+
+
+
+		</div><!--/collapse col-->
+	</div><!-- /row -->
+</div><!-- /container -->
+<div class="divide80"></div>
+
+
+
+
+
+<script>
+
+function board_move(href)
+{
+    window.open(href, "boardmove", "left=50, top=50, width=500, height=550, scrollbars=1");
+}
+</script>
+
+<script>
+$(function() {
+
+    //sns공유
+    $(".btn_share").click(function(){
+        $("#bo_v_sns").fadeIn();
+   
+    });
+
+    $(document).mouseup(function (e) {
+        var container = $("#bo_v_sns");
+        if (!container.is(e.target) && container.has(e.target).length === 0){
+        container.css("display","none");
+        }	
+    });
+
+    $("a.view_image").click(function() {
+        window.open(this.href, "large_image", "location=yes,links=no,toolbar=no,top=10,left=10,width=10,height=10,resizable=yes,scrollbars=no,status=no");
+        return false;
+    });
+
+    // 추천, 비추천
+    $("#good_button, #nogood_button").click(function() {
+        var $tx;
+        if(this.id == "good_button")
+            $tx = $("#bo_v_act_good");
+        else
+            $tx = $("#bo_v_act_nogood");
+
+        excute_good(this.href, $(this), $tx);
+        return false;
+    });
+
+    // 이미지 리사이즈
+    $("#bo_v_atc").viewimageresize();
+
+
+});
+
+function excute_good(href, $el, $tx)
+{
+    $.post(
+        href,
+        { js: "on" },
+        function(data) {
+            if(data.error) {
+                alert(data.error);
+                return false;
+            }
+
+            if(data.count) {
+                $el.find("strong").text(number_format(String(data.count)));
+                if($tx.attr("id").search("nogood") > -1) {
+                    $tx.text("이 글을 비추천하셨습니다.");
+                    $tx.fadeIn(200).delay(2500).fadeOut(200);
+                } else {
+                    $tx.text("이 글을 추천하셨습니다.");
+                    $tx.fadeIn(200).delay(2500).fadeOut(200);
+                }
+            }
+        }, "json"
+    );
+}
+</script>
+<!-- } 게시글 읽기 끝 -->
+
+
+
+		<footer style="background: #f9f9f9; height: 100px;">
+		<div class="container footer">
+			<div class="row">
+				<div class="col-md-12 text-white text-center">
+					<h2 class="en1" style="color:black; font-size: 16px; margin-top:15px;"></h2><!-- image or text  -->
+					<p class="ks2 f12" style="color:black;">
+			본서버는 연구 및 개발목적으로 운영되는 서버이며 모든 저작권은 NC소프트에 있습니다.	
+				</p>
+			
+				</div>
+			</div>
+		</div><!--/container-->
+    </footer>
+	</div><!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript -->
+    <!--<script src="vendor/jquery/jquery.min.js"></script>-->
+	<!-- 
+
+	https 에서 접속이 되지 않는 내용 로빈아빠님께서 제보 주셨습니다.
+	
+	-->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script>
+	var jQuery = $.noConflict(true);
+	</script>
+    <script src="./theme/l-word/assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="./theme/l-word/assets/owlcarousel/js/owl.carousel.min.js"></script>
+	<!-- countdown -->
+	<script type="text/javascript" src="./theme/l-word/assets/countdown/js/kinetic.js"></script>
+	<script type="text/javascript" src="./theme/l-word/assets/countdown/js/jquery.final-countdown.js"></script>
+	<script type="text/javascript" src="./theme/l-word/js/bootstrap-dropdownhover.js"></script>
+	<script type="text/javascript" src="./theme/l-word/js/custom.js"></script>
+
+
+	<script>
+		$(document).ready(function () {
+			//owl
+			jQuery(".owl-carousel").owlCarousel({
+				autoplay:true,
+				autoplayTimeout:3000,// 1000 -> 1초
+				autoplayHoverPause:true,
+				loop:true,
+				margin:10,//이미지 사이의 간격
+				nav:false,
+				responsive:{
+					0:{
+						items:2 // 모바일
+					},
+					600:{
+						items:3 // 브라우저 600px 이하
+					},
+					1000:{
+						items:6 // 브라우저 100px 이하
+					}
+				}
+			});
+
+			// countdown
+			'use strict';			
+			jQuery('.countdown').final_countdown({
+				'start': 1362139200,
+				'end': 1388461320,
+				'now': 1387461319        
+			});
+		});
+	</script>
+
+
+    
+    
+    <button type="button" id="top_btn">
+    	<i class="fa fa-arrow-up" aria-hidden="true"></i><span class="sound_only">상단으로</span>
+    </button>
+    <script>
+    $(function() {
+        $("#top_btn").on("click", function() {
+            $("html, body").animate({scrollTop:0}, '500');
+            return false;
+        });
+    });
+    </script>
+</div>
+
+
+<!-- } 하단 끝 -->
+
+<script>
+$(function() {
+    // 폰트 리사이즈 쿠키있으면 실행
+    font_resize("container", get_cookie("ck_font_resize_rmv_class"), get_cookie("ck_font_resize_add_class"));
+});
+</script>
+
+
+
+<!-- ie6,7에서 사이드뷰가 게시판 목록에서 아래 사이드뷰에 가려지는 현상 수정 -->
+<!--[if lte IE 7]>
+<script>
+$(function() {
+    var $sv_use = $(".sv_use");
+    var count = $sv_use.length;
+
+    $sv_use.each(function() {
+        $(this).css("z-index", count);
+        $(this).css("position", "relative");
+        count = count - 1;
+    });
+});
+</script>
+<![endif]-->
+
+
+</body>
+</html>
+
+<!-- 사용스킨 : theme/basic_div -->

@@ -1,0 +1,696 @@
+
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>모아 서버</title>
+<link rel="stylesheet" href="./theme/l-word/css/default.css">
+<link rel="stylesheet" href="./js/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="./theme/l-word/skin/latest/pic_box_list/style.css">
+<link rel="stylesheet" href="./theme/l-word/skin/latest/pic_basic_owl/style.css">
+
+<style>
+
+nav {
+background-color: rgba( 000, 000, 000, 0.5 );
+    }
+
+
+
+.Dflex {
+		display:flex;
+		justify-content: center;
+	}
+
+.container {
+magin-top:250px;
+}
+
+.download_btn {
+    background-color: #297fe2;
+    height: 57px;
+    width: 190px;
+    text-align: center;
+    line-height: 57px;
+    position: absolute;
+    right: 0;
+}
+
+.download_btn:hover {
+    background-color: #174c89;
+    transition: all;
+    transition-duration: 0.5s, 1s, 1s, 1s;
+
+
+}
+
+.nav-link {
+ color: white;   
+}
+
+li a {
+color:#000;
+}
+
+
+.table-fill {
+display:inline-block;
+}
+
+.main-title {
+    position: relative;
+    text-align: center;
+    height: 52px;
+    padding: 5px 0 17px 0;
+}
+
+.main-title::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #eee;
+    z-index: 1;
+}
+
+
+</style>
+
+
+
+
+
+<!-- google fonts -->
+<link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700,800|Noto+Sans+KR:100,300,400,500,700,900|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i|Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
+
+<!-------------------------- 구글아이콘 -------------------------->
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+<!-- Bootstrap core CSS -->
+<link href="./theme/l-word/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<!-- fontawesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<!-- owl Carousel -->
+<link rel="stylesheet" href="./theme/l-word/assets/owlcarousel/css/owl.carousel.min.css">
+<link rel="stylesheet" href="./theme/l-word/assets/owlcarousel/css/owl.theme.default.min.css">
+
+<!-- countdown -->
+<link href="./theme/l-word/assets/countdown/css/demo.css" rel="stylesheet">
+<!-- bootstrap-social icon -->
+<link href="./theme/l-word/assets/bootstrap-social/bootstrap-social.css" rel="stylesheet">
+<link href="./theme/l-word/css/animate.css" rel="stylesheet">
+<link href="./theme/l-word/css/bootstrap-dropdownhover.css" rel="stylesheet">
+<!-- Custom & ety -->
+<link href="./theme/l-word/css/modern-business.css" rel="stylesheet">
+<link href="./theme/l-word/css/ety.css" rel="stylesheet">
+
+
+<script src="./js/jquery-1.12.4.min.js"></script>
+<script src="./js/jquery-migrate-1.4.1.min.js"></script>
+<script src="./js/jquery.menu.js"></script>
+<script src="./js/common.js"></script>
+<script src="./js/wrest.js"></script>
+<script src="./js/placeholders.min.js"></script>
+</head>
+<body>
+
+<!-- 팝업레이어 시작 { -->
+<div id="hd_pop">
+    <h2>팝업레이어 알림</h2>
+
+<span class="sound_only">팝업레이어 알림이 없습니다.</span></div>
+
+<script>
+$(function() {
+    $(".hd_pops_reject").click(function() {
+        var id = $(this).attr('class').split(' ');
+        var ck_name = id[1];
+        var exp_time = parseInt(id[2]);
+        $("#"+id[1]).css("display", "none");
+        set_cookie(ck_name, 1, exp_time, g5_cookie_domain);
+    });
+    $('.hd_pops_close').click(function() {
+        var idb = $(this).attr('class').split(' ');
+        $('#'+idb[1]).css('display','none');
+    });
+    $("#hd").css("z-index", 1000);
+});
+</script>
+<!-- } 팝업레이어 끝 --><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-------------------------- 네비게이션 -------------------------->
+<!-- <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        document
+            .querySelector(".mobile-menu")
+            .addEventListener("click", function (e) {
+                if (document.querySelector('.menuwrap').classList.contains('on')) {
+                    //메뉴닫힘
+                    document
+                        .querySelector('.menuwrap')
+                        .classList
+                        .remove('on');
+                    document
+                        .querySelector('.mobile-menu i')
+                        .classList
+                        .remove('')
+                    document
+                        .querySelector('.mobile-menu i')
+                        .classList
+                        .add('fa-bars');
+
+                } else {
+                    //메뉴펼침
+                    document
+                        .querySelector('.menuwrap')
+                        .classList
+                        .add('on');
+                    document
+                        .querySelector('.mobile-menu i')
+                        .classList
+                        .remove('fa-bars');
+                    document
+                        .querySelector('.mobile-menu i')
+                        .classList
+                        .add('fa-times');
+
+
+                    //페이지 스크롤 락 레이어 클릭 메뉴 닫기
+                    document
+                        .querySelector('#dimmed')
+                        .addEventListener('click', function (e) {
+                            document
+                                .querySelector(".mobile-menu")
+                                .click();
+                        });
+
+                }
+            });
+    });
+
+</script> -->
+
+<!-------------------------- 네비게이션 -------------------------->
+<div
+    class="container-fluid top-line fixed-header"
+    style="background-color: rgba(000, 000, 000, 0.5);">
+    <div class="">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="tnb_index_left">
+                    <!-------------------------- 왼쪽 히든메뉴 -------------------------->
+
+                    <!-- <button type="button" class="mobile-menu">
+                        <span>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                        </span>
+                    </button> -->
+
+                    <div class="menuwrap">
+                        <div class="m_logo">
+                            <a href="./index.html"><img src="https://i.postimg.cc/MGQyCWdL/image.png" alt="logo"></a>
+                        </div>
+                        <nav id="menu">
+                            <!-- "메뉴목록 표시" -->
+                            <ul class="category_list">
+                                <li>
+                                    <a href="#" class="category_list_li">메뉴</a>
+                                    <ol>
+                                        <li>
+                                            <a href="./serverInfo.html">서버정보</a>
+                                        </li>
+                                        <li>
+                                            <a href="./itemInfo.html">아이템 정보</a>
+                                        </li>
+                                        <li>
+                                            <a href="./hgInfo.html">사냥터 정보</a>
+                                        </li>
+                                        <li>
+                                            <a href="./bossInfo.html">보스 정보</a>
+                                        </li>
+                                        <li>
+                                            <a href="./prEvent.html">홍보 이벤트</a>
+                                        </li>
+
+                                    </ol>
+                                </li>
+                            </ul>
+                        </nav>
+						
+                        <!-------------------------- 왼쪽 히든메뉴 끝 -------------------------->
+
+                    </div>
+                    <div class="logo">
+                        <a href="./index.html"><img src="https://i.postimg.cc/MGQyCWdL/image.png" alt="logo"></a>
+                    </div>
+                </div>
+                <div id="tnb_index" style="background-color: rgba(000, 000, 000, 0.0); height: 57px;">
+                    <ul style="background-color: rgba(000, 000, 000, 0.0); float:right; margin-top:14px; width:500px;">
+                        <li>
+                            <a href="https://t.me/moasv" target="_blank">
+                                <i class="fa fa-comments" aria-hidden="true"></i>
+                            <span>텔레그램</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /col -->
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</div>
+<style>
+.collapse.in {
+-webkit-transition-delay: 4s;
+transition-delay: 5s;
+visibility: visible;
+}
+</style>
+<nav
+    class="navbar  navbar-expand-lg navbar-white bg-white fixed-top"
+    style="margin-top:29px; height: 58px; color: white;">
+    <div class="">
+        <button
+            class="navbar-toggler navbar-dark navbar-toggler-right"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarResponsive"
+            aria-controls="navbarResponsive"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+            class="collapse navbar-collapse"
+            id="navbarResponsive"
+            data-hover="dropdown"
+            data-animations="fadeIn fadeIn fadeInUp fadeInRight">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link ko_14 f15" href="./serverInfo.html" target="_self">서버정보</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link ko_14 f15" href="./itemInfo.html" target="_self">아이템정보</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link ko_14 f15" href="./hgInfo.html" target="_self">사냥터정보</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link ko_14 f15" href="./bossInfo.html" target="_self">보스정보</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link ko_14 f15" href="./prEvent.html" target="_self">홍보 이벤트</a>
+                </li>                    
+            </ul>
+            <div class="download_btn" style="">
+                <a href="./download.html" style="color:white;font-size: 20px; font-weight:bold;">다운로드</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    
+
+
+<style>
+/* mobile */
+@media (min-width: 1px) and (max-width: 1089px) {
+	.ety-main{margin-bottom:63px;}
+}
+
+/* desktop */
+@media (min-width: 1090px) {
+	.ety-main{margin-bottom:130px;}
+}
+</style>
+
+
+
+<!-------------------------- 게시판 상단 배경 수정하는 곳 -------------------------->
+<!-------------------------- ./게시판 상단 배경 수정하는 곳 -------------------------->
+
+
+
+
+
+
+
+
+
+
+<!-------------------------- 슬라이드 -------------------------->
+<header>
+<script src="http://code.jquery.com/jquery-latest.js"></script> 
+  <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel" data-interval="5000">
+
+
+  <div class="slide_bottom">
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"><h6 class="ks4"></h6></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"><h6 class="ks4"></h6></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"><h6 class="ks4"></h6></li>
+    </ol>
+  </div>
+
+	<div class="carousel-inner" role="listbox">
+
+	  <!-- Slide One - Set the background image for this slide in the line below -->
+	  <div class="carousel-item active" style="background-image: url('./images/main_slide_bg_1.jpg')">
+		<div class="carousel-caption d-md-block">
+		</div>
+	  </div>
+
+	  <!-- Slide Two - Set the background image for this slide in the line below -->
+	  <div class="carousel-item" style="background-image: url('./images/main_slide_bg_1.jpg')">
+		<div class="carousel-caption d-md-block">
+		  <h3 class="ks4"></h3>
+		  <p class="ks4 f20"></p>
+		</div>
+	  </div>
+
+      <!-- Slide Three - Set the background image for this slide in the line below -->
+      <div class="carousel-item" style="background-image: url('./images/main_slide_bg_1.jpg')">
+        <div class="carousel-caption d-md-block">
+          <h3 class="ks4"></h3>
+          <p class="ks4 f20"></p>
+        </div>
+      </div>
+
+  </div>
+
+</header>
+<!-------------------------- ./슬라이드 -------------------------->
+
+
+
+
+
+
+
+
+
+<!-------------------------- 위젯바 -------------------------->
+
+<div class="container">
+	<div class="Dflex wizet"><a href="#"> 
+		<img src="https://i.ibb.co/D4x4pYP/image.png" alt="가이드" /> </a> 
+
+		<a style="" href="#"> 
+			<img src="https://i.ibb.co/94Bh0Lf/image.png" alt="파워북" /> </a> 
+
+				<a style="" href="#"> 
+					<img src="https://i.ibb.co/QCgn5yr/1.png" alt="불량회원신고" /> </a> 
+
+					<a style="" href="https://open.kakao.com/o/sX8c53Lf" target="_blank">
+						<img src="https://i.postimg.cc/wjWCJCS0/image.png" alt="카카오톡" /> </a></div>
+            
+					</div>
+					</div>
+
+          <!-- 추가 위젯 -->
+          
+          
+          <div class="container" style="margin-bottom:15px;">
+            <div class="Dflex wizet"><a href="./serverInfo.html"> 
+              <img src="./images/main_widget_server_info.jpg" alt="서버정보" /> </a> 
+              
+              <a style="" href="#"> 
+                <img src="./images/main_widget_pr_event.jpg" alt="홍보이벤트" /> </a> 
+                
+                <a style="" href="#"> 
+                  <img src="./images/main_widget_download.jpg" alt="다운로드" /> </a> 
+                </div>
+                </div>
+
+
+
+
+<!-------------------------- 게시판 -------------------------->
+
+<div class="" style="background: #f9f9f9;">
+	<div class="container">
+		<div class="row" style="" >
+      	<div class="pic_box_list box flex-grow-1">
+		<div class="in_box">
+			<div class="middle_box">
+				<div class="in_middle_box">
+					<h2 class="h2_widget">
+						사냥정보						<a class="h2_widget_a" href="https://bing3838.com/bbs/board.php?bo_table=HT"><span>more</span><i class="fa fa18 fa-plus"></i></a>
+					</h2>
+					<div class="in_widget">
+						<div class="widget-wrapper " style="">
+							<div class="WrapWidget_D">
+								<div class="wrap_widgetDW">
+									<table class="widgetTable_DW">
+										<tbody>
+											<tr class=""><td colspan="2"><a href="https://rjrl69.com/bbs/board.php?bo_table=HT&amp;wr_id=1"><div class="post-image"><div class="img-wrap" style="padding-bottom:71.38%;"><div class="img-item"><img src="https://bing3838.com/data/file/HT/thumb-0c388ea6cb3ac9e82d7b99b6beccfbcc_lM31SoKt_327805232e4b1fcb4dcffeb715ec3c675fa43830_297x212.png" alt="" class="wr-img"><div class="in-subject ellipsis">사냥터정보</div></div></div></div></a></td></tr><tr class="">
+													<td class="title">
+														<div class="in_title">&nbsp;</div>
+													</td>
+													<td class="time"><span class="date dw_date">&nbsp;</span></td>
+													</tr><tr class="dw">
+													<td class="title">
+														<div class="in_title">&nbsp;</div>
+													</td>
+													<td class="time"><span class="date dw_date">&nbsp;</span></td>
+													</tr><tr class="">
+													<td class="title">
+														<div class="in_title">&nbsp;</div>
+													</td>
+													<td class="time"><span class="date dw_date">&nbsp;</span></td>
+													</tr><tr class="dw">
+													<td class="title">
+														<div class="in_title">&nbsp;</div>
+													</td>
+													<td class="time"><span class="date dw_date">&nbsp;</span></td>
+													</tr>										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="pic_box_list box flex-grow-1">
+		<div class="in_box">
+			<div class="middle_box">
+				<div class="in_middle_box">
+					<h2 class="h2_widget">
+						보스정보						<a class="h2_widget_a" href="https://bing3838.com/bbs/board.php?bo_table=BS"><span>more</span><i class="fa fa18 fa-plus"></i></a>
+					</h2>
+					<div class="in_widget">
+						<div class="widget-wrapper " style="">
+							<div class="WrapWidget_D">
+								<div class="wrap_widgetDW">
+									<table class="widgetTable_DW">
+										<tbody>
+											<tr class=""><td colspan="2"><a href="https://rjrl69.com/bbs/board.php?bo_table=BS&amp;wr_id=4"><div class="post-image"><div class="img-wrap" style="padding-bottom:71.38%;"><div class="img-item"><img src="https://bing3838.com/data/file/BS/thumb-0c388ea6cb3ac9e82d7b99b6beccfbcc_EA0yrouq_aba8eca3a17eb6b671fcf3b365a45d2e8b501a56_297x212.png" alt="" class="wr-img"><div class="in-subject ellipsis">보스정보</div></div></div></div></a></td></tr><tr class="">
+													<td class="title">
+														<div class="in_title">&nbsp;</div>
+													</td>
+													<td class="time"><span class="date dw_date">&nbsp;</span></td>
+													</tr><tr class="dw">
+													<td class="title">
+														<div class="in_title">&nbsp;</div>
+													</td>
+													<td class="time"><span class="date dw_date">&nbsp;</span></td>
+													</tr><tr class="">
+													<td class="title">
+														<div class="in_title">&nbsp;</div>
+													</td>
+													<td class="time"><span class="date dw_date">&nbsp;</span></td>
+													</tr><tr class="dw">
+													<td class="title">
+														<div class="in_title">&nbsp;</div>
+													</td>
+													<td class="time"><span class="date dw_date">&nbsp;</span></td>
+													</tr>										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="pic_box_list box flex-grow-1">
+		<div class="in_box">
+			<div class="middle_box">
+				<div class="in_middle_box">
+					<h2 class="h2_widget">
+						아이템정보						<a class="h2_widget_a" href="https://bing3838.com/bbs/board.php?bo_table=IT"><span>more</span><i class="fa fa18 fa-plus"></i></a>
+					</h2>
+					<div class="in_widget">
+						<div class="widget-wrapper " style="">
+							<div class="WrapWidget_D">
+								<div class="wrap_widgetDW">
+									<table class="widgetTable_DW">
+										<tbody>
+											<tr class=""><td colspan="2"><a href="https://rjrl69.com/bbs/board.php?bo_table=IT&amp;wr_id=2"><div class="post-image"><div class="img-wrap" style="padding-bottom:71.38%;"><div class="img-item"><img src="https://bing3838.com/data/file/IT/thumb-0c388ea6cb3ac9e82d7b99b6beccfbcc_5bDxyfVc_376113c0b4aaa2fb5a23eee8bd6d1664a196eab7_297x212.png" alt="" class="wr-img"><div class="in-subject ellipsis">아이템정보</div></div></div></div></a></td></tr><tr class="">
+													<td class="title">
+														<div class="in_title">&nbsp;</div>
+													</td>
+													<td class="time"><span class="date dw_date">&nbsp;</span></td>
+													</tr><tr class="dw">
+													<td class="title">
+														<div class="in_title">&nbsp;</div>
+													</td>
+													<td class="time"><span class="date dw_date">&nbsp;</span></td>
+													</tr><tr class="">
+													<td class="title">
+														<div class="in_title">&nbsp;</div>
+													</td>
+													<td class="time"><span class="date dw_date">&nbsp;</span></td>
+													</tr><tr class="dw">
+													<td class="title">
+														<div class="in_title">&nbsp;</div>
+													</td>
+													<td class="time"><span class="date dw_date">&nbsp;</span></td>
+													</tr>										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+		</div>
+	</div>
+</div>
+		<footer style="background: #f9f9f9; height: 100px;">
+		<div class="container footer">
+			<div class="row">
+				<div class="col-md-12 text-white text-center">
+					<h2 class="en1" style="color:black; font-size: 16px; margin-top:15px;"></h2><!-- image or text  -->
+					<p class="ks2 f12" style="color:black;">
+			본서버는 연구 및 개발목적으로 운영되는 서버이며 모든 저작권은 NC소프트에 있습니다.	
+				</p>
+			
+				</div>
+			</div>
+		</div><!--/container-->
+    </footer>
+	</div><!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript -->
+    <!--<script src="vendor/jquery/jquery.min.js"></script>-->
+	<!-- 
+
+	https 에서 접속이 되지 않는 내용 로빈아빠님께서 제보 주셨습니다.
+	
+	-->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script>
+	var jQuery = $.noConflict(true);
+	</script>
+    <script src="./theme/l-word/assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="./theme/l-word/assets/owlcarousel/js/owl.carousel.min.js"></script>
+	<!-- countdown -->
+	<script type="text/javascript" src="./theme/l-word/assets/countdown/js/kinetic.js"></script>
+	<script type="text/javascript" src="./theme/l-word/assets/countdown/js/jquery.final-countdown.js"></script>
+	<script type="text/javascript" src="./theme/l-word/js/bootstrap-dropdownhover.js"></script>
+	<script type="text/javascript" src="./theme/l-word/js/custom.js"></script>
+
+
+	<script>
+		$(document).ready(function () {
+			//owl
+			jQuery(".owl-carousel").owlCarousel({
+				autoplay:true,
+				autoplayTimeout:3000,// 1000 -> 1초
+				autoplayHoverPause:true,
+				loop:true,
+				margin:10,//이미지 사이의 간격
+				nav:false,
+				responsive:{
+					0:{
+						items:2 // 모바일
+					},
+					600:{
+						items:3 // 브라우저 600px 이하
+					},
+					1000:{
+						items:6 // 브라우저 100px 이하
+					}
+				}
+			});
+
+			// countdown
+			'use strict';			
+			jQuery('.countdown').final_countdown({
+				'start': 1362139200,
+				'end': 1388461320,
+				'now': 1387461319        
+			});
+		});
+	</script>
+
+
+    
+    
+    <button type="button" id="top_btn">
+    	<i class="fa fa-arrow-up" aria-hidden="true"></i><span class="sound_only">상단으로</span>
+    </button>
+    <script>
+    $(function() {
+        $("#top_btn").on("click", function() {
+            $("html, body").animate({scrollTop:0}, '500');
+            return false;
+        });
+    });
+    </script>
+</div>
+
+
+<!-- } 하단 끝 -->
+
+<script>
+$(function() {
+    // 폰트 리사이즈 쿠키있으면 실행
+    font_resize("container", get_cookie("ck_font_resize_rmv_class"), get_cookie("ck_font_resize_add_class"));
+});
+</script>
+
+
+
+<!-- ie6,7에서 사이드뷰가 게시판 목록에서 아래 사이드뷰에 가려지는 현상 수정 -->
+<!--[if lte IE 7]>
+<script>
+$(function() {
+    var $sv_use = $(".sv_use");
+    var count = $sv_use.length;
+
+    $sv_use.each(function() {
+        $(this).css("z-index", count);
+        $(this).css("position", "relative");
+        count = count - 1;
+    });
+});
+</script>
+<![endif]-->
+
+
+</body>
+</html>
