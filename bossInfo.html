@@ -249,6 +249,46 @@ display:inline-block;
 transition-delay: 5s;
 visibility: visible;
 }
+table.type {
+    color: #ffffff;
+    border-collapse: collapse;
+    vertical-align: middle;
+    text-align: left;
+    line-height: 1.0;
+
+}
+table.type thead th {
+    text-align: center;
+    margin: 24px 0px 0px;
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: middle;
+    color: #ffffff;
+    border: 1px solid #fff;
+    background-color: #202020;
+    font-size: 1.0rem;
+}
+table.type tbody th {
+    width: 650px;
+    padding: 10px;
+    font-weight: bold;
+    color: #000000;
+    vertical-align: middle;
+    border: 1px solid #ccc;
+    font-size: 1.0rem;
+}
+table.type td {
+    width: 750px;
+    color: #000000;
+    border: 1px solid #ccc;
+    vertical-align: middle;
+    border-bottom: 1px solid #ccc;
+    margin: 0px;
+    padding: 9px 14px 10px;
+    text-align: center;
+    font-size: 1.0rem;
+    line-height: 1.29;
+}
 </style>
 <nav
     class="navbar  navbar-expand-lg navbar-white bg-white fixed-top"
@@ -409,80 +449,369 @@ visibility: visible;
 
 							<!-- 본문 내용 시작 { -->
 							<div id="bo_v_con">
-                                <div class="info-text">
-                                    <div class="info-sub-title">
-                                        <h3>⭐⭐보스 스폰 시간⭐⭐</h3>
-                                    </div>
-                                    <div class="info-paragraph">
-                                        <h4>⭐바포메트</h4>
-                                        <p>04:25, 10:20, 17:30, 20:30</p>
-                                        <p>월, 화, 수, 목, 금, 토, 일</p>
-                                    </div>
-                                    <div class="info-paragraph">
-                                        <h4>⭐데스나이트</h4>
-                                        <p>04:10, 08:10, 12:10, 16:10, 20:10, 00:10</p>
-                                        <p>월, 화, 수, 목, 금, 토, 일</p>
-                                    </div>
-                                    <div class="info-paragraph">
-                                        <h4>⭐데몬</h4>
-                                        <p>05:27, 11:40, 19:10</p>
-                                        <p>월, 화, 수, 목, 금, 토, 일</p>
-                                    </div>
-                                    <div class="info-paragraph">
-                                        <h4>⭐커츠</h4>
-                                        <p>04:05, 12:50, 20:05</p>
-                                        <p>월, 화, 수, 목, 금, 토, 일</p>
-                                    </div>
-                                    <div class="info-paragraph">
-                                        <h4>⭐피닉스</h4>
-                                        <p>14:30, 18:30, 22:30</p>
-                                        <p>월, 화, 수, 목, 금, 토, 일</p>
-                                    </div>
-                                    <div class="info-paragraph">
-                                        <h4>⭐그레이트 미노타우르스</h4>
-                                        <p>03:10, 13:10, 21:10, 23:10</p>
-                                        <p>월, 화, 수, 목, 금, 토, 일</p>
-                                    </div>
-                                    <div class="info-paragraph">
-                                        <h4>⭐거대 여왕개미</h4>
-                                        <p>01:35, 07:35, 13:35, 19:35, 22:35</p>
-                                        <p>월, 화, 수, 목, 금, 토, 일</p>
-                                    </div>
-                                    <div class="info-paragraph">
-                                        <h4>⭐거인 모닝스타</h4>
-                                        <p>03:55, 07:55, 11:55, 15:55, 19:55, 23:55</p>
-                                        <p>월, 화, 수, 목, 금, 토, 일</p>
-                                    </div>
-                                    <div class="info-paragraph">
-                                        <h4>⭐흑장로</h4>
-                                        <p>02:10, 04:10, 06:10, 08:10, 10:10, 12:10, 14:10, 16:10, 18:10, 20:10, 22:10, 00:10</p>
-                                        <p>월, 화, 수, 목, 금, 토, 일</p>
-                                    </div>
-                                    <div class="info-paragraph">
-                                        <h4>⭐베레스</h4>
-                                        <p>01:55, 13:35, 22:35</p>
-                                        <p>월, 화, 수, 목, 금, 토, 일</p>
-                                    </div>
-                                    <div class="info-paragraph">
-                                        <h4>⭐발록</h4>
-                                        <p>02:01, 10:01, 17:01, 21:01</p>
-                                        <p>월, 화, 수, 목, 금, 토, 일</p>
-                                    </div>
-                                    <div class="info-paragraph">
-                                        <h4>⭐사신 그림 리퍼</h4>
-                                        <p>09:10, 22:10</p>
-                                        <p>월, 화, 수, 목, 금, 토, 일</p>
-                                    </div>
-                                    <div class="info-paragraph">
-                                        <h4>⭐안타라스</h4>
-                                        <p>12:00, 00:00</p>
-                                        <p>월, 화, 수, 목, 금, 토, 일</p>
-                                    </div>
-                                    <div class="info-paragraph">
-                                        <h4>⭐발라카스</h4>
-                                        <p>06:00, 18:00</p>
-                                        <p>월, 화, 수, 목, 금, 토, 일</p>
-                                    </div>
+                                <table class="type">
+                                    <thead>
+                                    <tr>
+                                        <th scope="cols">보스</th>
+                                        <th scope="cols">보스명</th>
+                                        <th scope="cols">등장위치</th>
+                                        <th scope="cols">시간</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                      <td></td>
+                                      <td>바포메트</td>
+                                      <td></td>
+                                      <td>월, 화, 수, 목, 금, 토, 일<br />04:25, 10:20, 17:30, 20:30</td>
+                                      </tr>
+                                    </tbody>
+                                </table>
+                                <div class="inform_area" style="background-color: white; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; font-size: 18px; letter-spacing: 0px; line-height: 2.89; margin: 10px 0px 0px; padding: 15px; text-align: left; text-indent: 0x;">
+                                    <span class="badge badge-dark p-2">드랍아이템</span><br>
+                                    <h4 class="fw-bold mb-0">
+                                        <div style="color: black; font-size: 0.9rem; line-height: 1.69; text-align: left;">**인게임 게시판 참조</div>
+                                    </h4>
+                                </div>
+                                <br />
+                                <table class="type">
+                                    <thead>
+                                    <tr>
+                                        <th scope="cols">보스</th>
+                                        <th scope="cols">보스명</th>
+                                        <th scope="cols">등장위치</th>
+                                        <th scope="cols">시간</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                      <td></td>
+                                      <td>데스나이트</td>
+                                      <td></td>
+                                      <td>월, 화, 수, 목, 금, 토, 일<br />04:10, 08:10, 12:10, 16:10, 20:10, 00:10</td>
+                                      </tr>
+                                    </tbody>
+                                </table>
+                                <div class="inform_area" style="background-color: white; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; font-size: 18px; letter-spacing: 0px; line-height: 2.89; margin: 10px 0px 0px; padding: 15px; text-align: left; text-indent: 0x;">
+                                    <span class="badge badge-dark p-2">드랍아이템</span><br>
+                                    <h4 class="fw-bold mb-0">
+                                        <div style="color: black; font-size: 0.9rem; line-height: 1.69; text-align: left;">**인게임 게시판 참조</div>
+                                    </h4>
+                                </div>
+                                <br />
+                                <table class="type">
+                                    <thead>
+                                    <tr>
+                                        <th scope="cols">보스</th>
+                                        <th scope="cols">보스명</th>
+                                        <th scope="cols">등장위치</th>
+                                        <th scope="cols">시간</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                      <td></td>
+                                      <td>바포메트</td>
+                                      <td></td>
+                                      <td>화요일,금요일<br />23:00</td>
+                                      </tr>
+                                    </tbody>
+                                </table>
+                                <div class="inform_area" style="background-color: white; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; font-size: 18px; letter-spacing: 0px; line-height: 2.89; margin: 10px 0px 0px; padding: 15px; text-align: left; text-indent: 0x;">
+                                    <span class="badge badge-dark p-2">드랍아이템</span><br>
+                                    <h4 class="fw-bold mb-0">
+                                        <div style="color: black; font-size: 0.9rem; line-height: 1.69; text-align: left;">**인게임 게시판 참조</div>
+                                    </h4>
+                                </div>
+                                <br />
+                                <table class="type">
+                                    <thead>
+                                    <tr>
+                                        <th scope="cols">보스</th>
+                                        <th scope="cols">보스명</th>
+                                        <th scope="cols">등장위치</th>
+                                        <th scope="cols">시간</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                      <td></td>
+                                      <td>데몬</td>
+                                      <td></td>
+                                      <td>월, 화, 수, 목, 금, 토, 일<br />05:27, 11:40, 19:10</td>
+                                      </tr>
+                                    </tbody>
+                                </table>
+                                <div class="inform_area" style="background-color: white; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; font-size: 18px; letter-spacing: 0px; line-height: 2.89; margin: 10px 0px 0px; padding: 15px; text-align: left; text-indent: 0x;">
+                                    <span class="badge badge-dark p-2">드랍아이템</span><br>
+                                    <h4 class="fw-bold mb-0">
+                                        <div style="color: black; font-size: 0.9rem; line-height: 1.69; text-align: left;">**인게임 게시판 참조</div>
+                                    </h4>
+                                </div>
+                                <br />
+                                <table class="type">
+                                    <thead>
+                                    <tr>
+                                        <th scope="cols">보스</th>
+                                        <th scope="cols">보스명</th>
+                                        <th scope="cols">등장위치</th>
+                                        <th scope="cols">시간</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                      <td></td>
+                                      <td>커츠</td>
+                                      <td></td>
+                                      <td>월, 화, 수, 목, 금, 토, 일<br />04:05, 12:50, 20:05</td>
+                                      </tr>
+                                    </tbody>
+                                </table>
+                                <div class="inform_area" style="background-color: white; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; font-size: 18px; letter-spacing: 0px; line-height: 2.89; margin: 10px 0px 0px; padding: 15px; text-align: left; text-indent: 0x;">
+                                    <span class="badge badge-dark p-2">드랍아이템</span><br>
+                                    <h4 class="fw-bold mb-0">
+                                        <div style="color: black; font-size: 0.9rem; line-height: 1.69; text-align: left;">**인게임 게시판 참조</div>
+                                    </h4>
+                                </div>
+                                <table class="type">
+                                    <thead>
+                                    <tr>
+                                        <th scope="cols">보스</th>
+                                        <th scope="cols">보스명</th>
+                                        <th scope="cols">등장위치</th>
+                                        <th scope="cols">시간</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                      <td></td>
+                                      <td>피닉스</td>
+                                      <td></td>
+                                      <td>월, 화, 수, 목, 금, 토, 일<br />14:30, 18:30, 22:30</td>
+                                      </tr>
+                                    </tbody>
+                                </table>
+                                <div class="inform_area" style="background-color: white; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; font-size: 18px; letter-spacing: 0px; line-height: 2.89; margin: 10px 0px 0px; padding: 15px; text-align: left; text-indent: 0x;">
+                                    <span class="badge badge-dark p-2">드랍아이템</span><br>
+                                    <h4 class="fw-bold mb-0">
+                                        <div style="color: black; font-size: 0.9rem; line-height: 1.69; text-align: left;">**인게임 게시판 참조</div>
+                                    </h4>
+                                </div>
+                                <table class="type">
+                                    <thead>
+                                    <tr>
+                                        <th scope="cols">보스</th>
+                                        <th scope="cols">보스명</th>
+                                        <th scope="cols">등장위치</th>
+                                        <th scope="cols">시간</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                      <td></td>
+                                      <td>그레이트 미노타우르스</td>
+                                      <td></td>
+                                      <td>월, 화, 수, 목, 금, 토, 일<br />03:10, 13:10, 21:10, 23:10</td>
+                                      </tr>
+                                    </tbody>
+                                </table>
+                                <div class="inform_area" style="background-color: white; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; font-size: 18px; letter-spacing: 0px; line-height: 2.89; margin: 10px 0px 0px; padding: 15px; text-align: left; text-indent: 0x;">
+                                    <span class="badge badge-dark p-2">드랍아이템</span><br>
+                                    <h4 class="fw-bold mb-0">
+                                        <div style="color: black; font-size: 0.9rem; line-height: 1.69; text-align: left;">**인게임 게시판 참조</div>
+                                    </h4>
+                                </div>
+                                <table class="type">
+                                    <thead>
+                                    <tr>
+                                        <th scope="cols">보스</th>
+                                        <th scope="cols">보스명</th>
+                                        <th scope="cols">등장위치</th>
+                                        <th scope="cols">시간</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                      <td></td>
+                                      <td>거대 여왕개미</td>
+                                      <td></td>
+                                      <td>월, 화, 수, 목, 금, 토, 일<br />01:35, 07:35, 13:35, 19:35, 22:35</td>
+                                      </tr>
+                                    </tbody>
+                                </table>
+                                <div class="inform_area" style="background-color: white; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; font-size: 18px; letter-spacing: 0px; line-height: 2.89; margin: 10px 0px 0px; padding: 15px; text-align: left; text-indent: 0x;">
+                                    <span class="badge badge-dark p-2">드랍아이템</span><br>
+                                    <h4 class="fw-bold mb-0">
+                                        <div style="color: black; font-size: 0.9rem; line-height: 1.69; text-align: left;">**인게임 게시판 참조</div>
+                                    </h4>
+                                </div>
+                                <table class="type">
+                                    <thead>
+                                    <tr>
+                                        <th scope="cols">보스</th>
+                                        <th scope="cols">보스명</th>
+                                        <th scope="cols">등장위치</th>
+                                        <th scope="cols">시간</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                      <td></td>
+                                      <td>거인 모닝스타</td>
+                                      <td></td>
+                                      <td>월, 화, 수, 목, 금, 토, 일<br />03:55, 07:55, 11:55, 15:55, 19:55, 23:55</td>
+                                      </tr>
+                                    </tbody>
+                                </table>
+                                <div class="inform_area" style="background-color: white; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; font-size: 18px; letter-spacing: 0px; line-height: 2.89; margin: 10px 0px 0px; padding: 15px; text-align: left; text-indent: 0x;">
+                                    <span class="badge badge-dark p-2">드랍아이템</span><br>
+                                    <h4 class="fw-bold mb-0">
+                                        <div style="color: black; font-size: 0.9rem; line-height: 1.69; text-align: left;">**인게임 게시판 참조</div>
+                                    </h4>
+                                </div>
+                                <table class="type">
+                                    <thead>
+                                    <tr>
+                                        <th scope="cols">보스</th>
+                                        <th scope="cols">보스명</th>
+                                        <th scope="cols">등장위치</th>
+                                        <th scope="cols">시간</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                      <td></td>
+                                      <td>흑장로</td>
+                                      <td></td>
+                                      <td>월, 화, 수, 목, 금, 토, 일<br />02:10, 04:10, 06:10, 08:10, 10:10, 12:10, 14:10, 16:10, 18:10, 20:10, 22:10, 00:10</td>
+                                      </tr>
+                                    </tbody>
+                                </table>
+                                <div class="inform_area" style="background-color: white; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; font-size: 18px; letter-spacing: 0px; line-height: 2.89; margin: 10px 0px 0px; padding: 15px; text-align: left; text-indent: 0x;">
+                                    <span class="badge badge-dark p-2">드랍아이템</span><br>
+                                    <h4 class="fw-bold mb-0">
+                                        <div style="color: black; font-size: 0.9rem; line-height: 1.69; text-align: left;">**인게임 게시판 참조</div>
+                                    </h4>
+                                </div>
+                                <table class="type">
+                                    <thead>
+                                    <tr>
+                                        <th scope="cols">보스</th>
+                                        <th scope="cols">보스명</th>
+                                        <th scope="cols">등장위치</th>
+                                        <th scope="cols">시간</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                      <td></td>
+                                      <td>베레스</td>
+                                      <td></td>
+                                      <td>월, 화, 수, 목, 금, 토, 일<br />01:55, 13:35, 22:35</td>
+                                      </tr>
+                                    </tbody>
+                                </table>
+                                <div class="inform_area" style="background-color: white; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; font-size: 18px; letter-spacing: 0px; line-height: 2.89; margin: 10px 0px 0px; padding: 15px; text-align: left; text-indent: 0x;">
+                                    <span class="badge badge-dark p-2">드랍아이템</span><br>
+                                    <h4 class="fw-bold mb-0">
+                                        <div style="color: black; font-size: 0.9rem; line-height: 1.69; text-align: left;">**인게임 게시판 참조</div>
+                                    </h4>
+                                </div>
+                                <table class="type">
+                                    <thead>
+                                    <tr>
+                                        <th scope="cols">보스</th>
+                                        <th scope="cols">보스명</th>
+                                        <th scope="cols">등장위치</th>
+                                        <th scope="cols">시간</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                      <td></td>
+                                      <td>발록</td>
+                                      <td></td>
+                                      <td>월, 화, 수, 목, 금, 토, 일<br />02:01, 10:01, 17:01, 21:01</td>
+                                      </tr>
+                                    </tbody>
+                                </table>
+                                <div class="inform_area" style="background-color: white; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; font-size: 18px; letter-spacing: 0px; line-height: 2.89; margin: 10px 0px 0px; padding: 15px; text-align: left; text-indent: 0x;">
+                                    <span class="badge badge-dark p-2">드랍아이템</span><br>
+                                    <h4 class="fw-bold mb-0">
+                                        <div style="color: black; font-size: 0.9rem; line-height: 1.69; text-align: left;">**인게임 게시판 참조</div>
+                                    </h4>
+                                </div>
+                                <table class="type">
+                                    <thead>
+                                    <tr>
+                                        <th scope="cols">보스</th>
+                                        <th scope="cols">보스명</th>
+                                        <th scope="cols">등장위치</th>
+                                        <th scope="cols">시간</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                      <td></td>
+                                      <td>사신 그림 리퍼</td>
+                                      <td></td>
+                                      <td>월, 화, 수, 목, 금, 토, 일<br />09:10, 22:10</td>
+                                      </tr>
+                                    </tbody>
+                                </table>
+                                <div class="inform_area" style="background-color: white; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; font-size: 18px; letter-spacing: 0px; line-height: 2.89; margin: 10px 0px 0px; padding: 15px; text-align: left; text-indent: 0x;">
+                                    <span class="badge badge-dark p-2">드랍아이템</span><br>
+                                    <h4 class="fw-bold mb-0">
+                                        <div style="color: black; font-size: 0.9rem; line-height: 1.69; text-align: left;">**인게임 게시판 참조</div>
+                                    </h4>
+                                </div>
+                                <table class="type">
+                                    <thead>
+                                    <tr>
+                                        <th scope="cols">보스</th>
+                                        <th scope="cols">보스명</th>
+                                        <th scope="cols">등장위치</th>
+                                        <th scope="cols">시간</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                      <td></td>
+                                      <td>안타라스</td>
+                                      <td></td>
+                                      <td>월, 화, 수, 목, 금, 토, 일<br />12:00, 00:00</td>
+                                      </tr>
+                                    </tbody>
+                                </table>
+                                <div class="inform_area" style="background-color: white; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; font-size: 18px; letter-spacing: 0px; line-height: 2.89; margin: 10px 0px 0px; padding: 15px; text-align: left; text-indent: 0x;">
+                                    <span class="badge badge-dark p-2">드랍아이템</span><br>
+                                    <h4 class="fw-bold mb-0">
+                                        <div style="color: black; font-size: 0.9rem; line-height: 1.69; text-align: left;">**인게임 게시판 참조</div>
+                                    </h4>
+                                </div>
+                                <table class="type">
+                                    <thead>
+                                    <tr>
+                                        <th scope="cols">보스</th>
+                                        <th scope="cols">보스명</th>
+                                        <th scope="cols">등장위치</th>
+                                        <th scope="cols">시간</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                      <td></td>
+                                      <td>발라카스</td>
+                                      <td></td>
+                                      <td>월, 화, 수, 목, 금, 토, 일<br />006:00, 18:00</td>
+                                      </tr>
+                                    </tbody>
+                                </table>
+                                <div class="inform_area" style="background-color: white; border: 1px solid rgb(204, 204, 204); box-sizing: border-box; font-size: 18px; letter-spacing: 0px; line-height: 2.89; margin: 10px 0px 0px; padding: 15px; text-align: left; text-indent: 0x;">
+                                    <span class="badge badge-dark p-2">드랍아이템</span><br>
+                                    <h4 class="fw-bold mb-0">
+                                        <div style="color: black; font-size: 0.9rem; line-height: 1.69; text-align: left;">**인게임 게시판 참조</div>
+                                    </h4>
                                 </div>
                             </div>
 														<!-- } 본문 내용 끝 -->
